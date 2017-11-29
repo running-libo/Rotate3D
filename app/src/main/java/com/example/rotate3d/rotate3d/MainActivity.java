@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
@@ -38,17 +37,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(curPage == PAGE_LOGIN){
-                    rotateLogin2Register();
+                    rotateAnim();
                     curPage = PAGE_REGISTER;
                 }else{
-                    rotateLogin2Register();
+                    rotateAnim();
                     curPage = PAGE_LOGIN;
                 }
             }
         });
     }
 
-    private void rotateLogin2Register(){
+    private void rotateAnim(){
         Rotate3D rotate3D = new Rotate3D(0,90,rlContainer.getWidth()/2,rlContainer.getHeight()/2,DEPTHZ,true);
         rotate3D.setDuration(DURATION);
         rotate3D.setAnimationListener(new Animation.AnimationListener() {
